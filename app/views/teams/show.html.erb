@@ -1,0 +1,71 @@
+<div>
+  <div>
+    <h1>
+      Team #<%= @the_team.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/teams">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_team/<%= @the_team.id %>">
+          Delete team
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_team.name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_team.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_team.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit team
+    </h2>
+
+    <form action="/modify_team/<%= @the_team.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_team.name %>">
+      </div>
+
+      <button>
+        Update team
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

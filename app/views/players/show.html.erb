@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Player #<%= @the_player.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/players">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_player/<%= @the_player.id %>">
+          Delete player
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Team
+      </dt>
+      <dd>
+        <%= @the_player.team_id %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_player.name %>
+      </dd>
+
+      <dt>
+        Points per game
+      </dt>
+      <dd>
+        <%= @the_player.points_per_game %>
+      </dd>
+
+      <dt>
+        Rebounds per game
+      </dt>
+      <dd>
+        <%= @the_player.rebounds_per_game %>
+      </dd>
+
+      <dt>
+        Assists per game
+      </dt>
+      <dd>
+        <%= @the_player.assists_per_game %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_player.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_player.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit player
+    </h2>
+
+    <form action="/modify_player/<%= @the_player.id %>"  method="post" >
+      <div>
+        <label for="team_id_box">
+          Team
+        </label>
+
+        <input type="text" id="team_id_box" name="query_team_id" value="<%= @the_player.team_id %>">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_player.name %>">
+      </div>
+
+      <div>
+        <label for="points_per_game_box">
+          Points per game
+        </label>
+
+        <input type="text" id="points_per_game_box" name="query_points_per_game" value="<%= @the_player.points_per_game %>">
+      </div>
+
+      <div>
+        <label for="rebounds_per_game_box">
+          Rebounds per game
+        </label>
+
+        <input type="text" id="rebounds_per_game_box" name="query_rebounds_per_game" value="<%= @the_player.rebounds_per_game %>">
+      </div>
+
+      <div>
+        <label for="assists_per_game_box">
+          Assists per game
+        </label>
+
+        <input type="text" id="assists_per_game_box" name="query_assists_per_game" value="<%= @the_player.assists_per_game %>">
+      </div>
+
+      <button>
+        Update player
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
