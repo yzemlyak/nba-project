@@ -14,3 +14,6 @@
 class Player < ApplicationRecord
   belongs_to :team, required: true, class_name: "Team", foreign_key: "team_id"
 end
+#will need to put some data from csv into team.rb and some into player.rb
+#will need a query to find the player's team every time they are accessed
+#Yoni will need to add step 5 equivalent from CSV lesson 
