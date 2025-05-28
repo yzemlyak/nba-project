@@ -8,4 +8,5 @@
 #  updated_at :datetime         not null
 #
 class Team < ApplicationRecord
+  has_many  :players, class_name: "Player", foreign_key: "team_id", dependent: :destroy
 end
