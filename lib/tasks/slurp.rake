@@ -5,7 +5,7 @@ namespace :slurp do
     pp "Destroying Previous Data"
       if Rails.env.development?
         Player.destroy_all
-        Team.destroy_all
+        Team.destroy_all 
       end
     pp "Generate Teams"
     csv_text = File.read(Rails.root.join("lib", "csvs", "teams.csv"))
@@ -15,7 +15,7 @@ namespace :slurp do
       t.id = row["ID"]
       t.name = row["Name"]
       t.save
-    end
+    end 
     pp "There are now #{Team.count} teams."
     pp "Generating Players"
     csv_text = File.read(Rails.root.join("lib", "csvs", "player_stats.csv"))
