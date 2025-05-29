@@ -22,7 +22,7 @@ namespace :slurp do
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     csv.each do |row|
       p = Player.new
-      p.id = row["ID"]
+      #p.id = row["ID"]
       p.name = row["Name"]
       p.points_per_game = row["Points per Game"]
       p.rebounds_per_game = row["Rebounds per Game"]
