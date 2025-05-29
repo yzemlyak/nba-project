@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
   def index
     matching_players = Player.all
 
-    @list_of_players = matching_players.order({ :created_at => :desc })
+    @list_of_players = matching_players.order({ :created_at => :asc })
 
     render({ :template => "players/index" })
   end

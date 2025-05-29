@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
   def index
     matching_teams = Team.all
 
-    @list_of_teams = matching_teams.order({ :created_at => :desc })
+    @list_of_teams = matching_teams.order({ :created_at => :asc })
 
     render({ :template => "teams/index" })
   end

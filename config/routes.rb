@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Routes for the Player resource:
-  root "teams#index"
+  root "players#index"
   # CREATE
   post("/insert_player", { :controller => "players", :action => "create" })
           

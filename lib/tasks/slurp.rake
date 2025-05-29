@@ -35,7 +35,6 @@ namespace :slurp do
 end
 
 
-
 # namespace :slurp do
 #   desc "TODO"
 #   task player_stats: :environment do
